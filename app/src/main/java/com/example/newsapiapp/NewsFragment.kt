@@ -50,7 +50,7 @@ class NewsFragment : Fragment() {
         newsAdapter.setOnItemClickListner { it ->
             val bundle = Bundle().apply {
                 putSerializable("selected_article", it) // Use putParcelable instead of putSerializable
-                putSerializable("save_btn", false)
+                putSerializable("save_btn", true)
             }
 
             Log.d("MYTAG",it.toString())

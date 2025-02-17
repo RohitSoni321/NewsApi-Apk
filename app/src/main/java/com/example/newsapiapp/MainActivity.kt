@@ -40,5 +40,22 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNav.setupWithNavController(navController)
 
         newsViewModel = ViewModelProvider(this,newsViewModelFactory).get(NewsViewModel::class.java)
+
+        binding.bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.newsFragment -> {
+                    navController.navigate(R.id.newsFragment)
+                    true
+                }
+                R.id.savedNewsFragment -> {
+                    navController.navigate(R.id.savedNewsFragment)
+                    true
+                }
+                else -> false
+            }
+        }
+
     }
+
+
 }
